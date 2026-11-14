@@ -83,3 +83,23 @@ void setLineL(Window *w, Line l) {
         }
     }
 }
+
+void setTriangle(Window *w, Vector2 v1, Vector2 v2, Vector2 v3, char symbol) {
+    if (w == NULL) {
+        return;
+    }
+
+    setLine(w, v1, v2, symbol);
+    setLine(w, v2, v3, symbol);
+    setLine(w, v3, v1, symbol);
+}
+
+void setTriangleT(Window *w, Triangle t) {
+    if (w == NULL) {
+        return;
+    }
+
+    setLine(w, t.v1, t.v2, t.symbol);
+    setLine(w, t.v2, t.v3, t.symbol);
+    setLine(w, t.v3, t.v1, t.symbol);
+}
