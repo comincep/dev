@@ -1,6 +1,6 @@
-#include "stdio.h"
+#include "../../include/central.h"
 
 int main() {
-    printf("hello world");
+    printf("hello world\n");
     return 0;
 }
