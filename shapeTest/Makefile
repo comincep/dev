@@ -9,5 +9,5 @@ clean:
 	rm $(TARGET)
 
 rundel: all
-	./$(TARGET)
+	xterm ./$(TARGET)
 	rm $(TARGET)

@@ -2,6 +2,5 @@
 #define CENTRAL_H
 
 #include <stdio.h>
-#include "shapes.h"
 
 #endif
