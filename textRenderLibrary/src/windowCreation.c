@@ -53,9 +53,15 @@ void resetScreen(Window *w, float FPS) {
         return;
     }
 
-    memset(w->framebuffer, ' ', (size_t)w->width * w->height);
-
     printf("\033[H");
 
     usleep(1000000 / FPS);
+}
+
+void clearScreen(Window *w) {
+    if (w == NULL) {
+        return;
+    }
+
+    memset(w->framebuffer, ' ', (size_t)w->width * w->height);
 }

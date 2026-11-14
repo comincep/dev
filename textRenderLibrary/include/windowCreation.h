@@ -14,3 +14,5 @@ void destroyWindow(Window *window);
 
 void renderWindow(Window *window);
 void resetScreen(Window *w, float FPS);
+
+void clearScreen(Window *w);
