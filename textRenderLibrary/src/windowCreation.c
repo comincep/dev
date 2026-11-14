@@ -1,18 +1,49 @@
 #include "../include/central.h"
 
 Window *createWindow(uint16_t width, uint16_t height) {
+    if (width == 0 || height == 0) {
+        return NULL;
+    }
+
     Window *window = malloc(sizeof(Window));
     
-    window->width = width;
-    window->height = height;
-
     if (window == NULL) {
         return NULL;
     }
 
+    window->width = width;
+    window->height = height;
+
+    window->framebuffer = malloc((width * height) * sizeof(char));
+
+    if (window->framebuffer == NULL) {
+        free(window);
+        return NULL;
+    }
+
+    memset(window->framebuffer, '.', (size_t)width * height);
     return window;
 }
 
 void destroyWindow(Window *window) {
+    if(window == NULL) {
+        return;
+    }
+
+    free(window->framebuffer);
     free(window);
+}
+
+void renderWindow(Window *window) {
+    if (window == NULL) {
+        return;
+    }
+
+    for (int y = 0; y < window->height; y++) {
+        for (int x = 0; x < window->width; x++) {
+            putchar(window->framebuffer[y * window->width + x]);
+            putchar(' ');
+        }
+        putchar('\n');
+    }
 }
