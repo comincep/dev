@@ -1,6 +1,6 @@
 #include "../../include/central.h"
 
 int main() {
-    printf("hello world\n");
+    square(5, 'o');
     return 0;
 }
