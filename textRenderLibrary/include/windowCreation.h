@@ -1,6 +1,6 @@
 #pragma once
 
-#include "central.h"
+#include "dependencies.h"
 
 typedef struct Window {
     uint16_t width;

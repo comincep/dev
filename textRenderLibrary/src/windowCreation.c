@@ -1,4 +1,4 @@
-#include "../include/central.h"
+#include "../include/windowCreation.h"
 
 Window *createWindow(uint16_t width, uint16_t height) {
     if (width == 0 || height == 0) {
@@ -14,14 +14,14 @@ Window *createWindow(uint16_t width, uint16_t height) {
     window->width = width;
     window->height = height;
 
-    window->framebuffer = malloc((width * height) * sizeof(char));
+    window->framebuffer = malloc((size_t)(width * height) * sizeof(char));
 
     if (window->framebuffer == NULL) {
         free(window);
         return NULL;
     }
 
-    memset(window->framebuffer, '.', (size_t)width * height);
+    memset(window->framebuffer, ' ', (size_t)width * height);
     return window;
 }
 
@@ -49,7 +49,11 @@ void renderWindow(Window *window) {
 }
 
 void resetScreen(Window *w, float FPS) {
-    memset(w->framebuffer, '.', (size_t)w->width * w->height);
+    if (w == NULL) {
+        return;
+    }
+
+    memset(w->framebuffer, ' ', (size_t)w->width * w->height);
 
     printf("\033[H");
 
