@@ -7,16 +7,15 @@ A collection of personal projects.
 - **textRenderLibrary**
 
 ## How to use:
-Clone the repository
-
+Clone the repository:
 - `git clone https://github.com/comincep/dev/`
 
-Enter a project
+Enter a project:
 - Ex: `cd printInC`
 
-Build the project.
+Build the project:
 - `make clean`
 - `make`
 
-To run just do
+To execute:
 - `./app`
