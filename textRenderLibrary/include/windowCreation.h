@@ -11,4 +11,6 @@ typedef struct Window {
 
 Window *createWindow(uint16_t width, uint16_t height);
 void destroyWindow(Window *window);
+
 void renderWindow(Window *window);
+void resetScreen(Window *w, float FPS);

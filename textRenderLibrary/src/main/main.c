@@ -1,8 +1,17 @@
 #include "../../include/central.h"
 
-int main() {
-    Window *w = createWindow(50, 50);
-    renderWindow(w);
+int main(void) {
+    Window *w = createWindow(25, 25);
+
+    if (w == NULL) {
+        return 1;
+    }
+    
+    while (1) {
+        resetScreen(w, 1);
+        renderWindow(w);
+    }
+
     destroyWindow(w);
     return 0;
 }

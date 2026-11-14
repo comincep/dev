@@ -47,3 +47,11 @@ void renderWindow(Window *window) {
         putchar('\n');
     }
 }
+
+void resetScreen(Window *w, float FPS) {
+    memset(w->framebuffer, '.', (size_t)w->width * w->height);
+
+    printf("\033[H");
+
+    usleep(1000000 / FPS);
+}
