@@ -1,6 +1,7 @@
-#ifndef CENTRAL_H
-#define CENTRAL_H
+#pragma once
 
 #include <stdio.h>
-
-#endif
+#include <stdlib.h>
+#include <math.h>
+#include <stdint.h>
+#include "windowCreation.h"
